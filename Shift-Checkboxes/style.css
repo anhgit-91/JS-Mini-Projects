@@ -1,0 +1,48 @@
+
+
+  * {
+    margin: 0;
+  }
+
+  html, body {
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+    background-color: #eee;
+  }
+
+.inbox {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: yellow;
+    border-radius: 5px;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #999;
+}
+
+.item:last-child {
+    border-bottom: 0;
+}
+
+input:checked + p {
+    background: #ccc;
+    text-decoration: line-through;
+}
+
+input[type="checkbox"] {
+    margin: 20px;
+}
+
+p {
+    margin: 0;
+    padding: 20px;
+    transition: background 0.2;
+    flex: 1;
+    font-size: 20px;
+    font-weight: 200;
+    border-left: 1px solid #999;
+}
