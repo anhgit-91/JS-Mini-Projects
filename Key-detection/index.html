@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+  <style>
+    h1{
+        text-align: center;
+    }
+  </style>
+</head>
+<body>
+    <h1>Type the secret code: 'webros'</h1>
+<script>
+    const pressed = [];
+    const secretCode = 'wesbos';
+    // console.log(-secretCode.length -1); // -7
+    window.addEventListener('keyup', (e) => {
+        console.log(e.key);
+        pressed.push(e.key);
+        console.log(pressed.length - secretCode.length);
+        pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+        // negative index: start removing/replacing from the last index. So in this case, when array has 7 items, it will start from last item to 7th item and remove it( based on splice(second index) and from left to right). As a result the array always has 6 items.
+        // for instance: arr = [a, b ,c ,d ,e ,f];
+        // arr.splice(-2,1); // remove e
+        // arr.splice(-2,2) // remove e,r 
+        if(pressed.join('').includes(secretCode)) {
+            console.log('You did it!');
+            cornify_add()
+        }
+        console.log(pressed);
+    })
+</script>
+</body>
+</html>
